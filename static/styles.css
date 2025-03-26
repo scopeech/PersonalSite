@@ -1,19 +1,17 @@
-/* Основные стили для страницы */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
     overflow: hidden;
-    background: #1e1e1e; /* Темный фон */
-    color: #f0f0f0; /* Светлый текст */
+    background: #1e1e1e;
+    color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-/* Фон с гифкой */
 .background {
     position: absolute;
     top: 0;
@@ -21,38 +19,35 @@ body {
     width: 100%;
     height: 100%;
     background: url("background.gif") no-repeat center center/cover;
-    z-index: -1; /* Помещаем фон под контент */
-    filter: grayscale(100%); /* Черно-белая обработка */
+    z-index: -1;
+    filter: grayscale(100%);
 }
 
-/* Кнопка включения музыки */
 #music-toggle {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #333; /* Темный фон кнопки */
-    color: #f0f0f0; /* Цвет текста кнопки */
+    background-color: #333;
+    color: #f0f0f0;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тень кнопки */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавные эффекты */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #music-toggle:hover {
-    background-color: #444; /* Изменение цвета кнопки при наведении */
-    transform: scale(1.1); /* Увеличение при наведении */
+    background-color: #444;
+    transform: scale(1.1);
 }
 
-/* Основной контент */
 .content {
     text-align: center;
-    z-index: 1; /* Контент сверху фона */
+    z-index: 1;
 }
 
-/* Стиль ника */
 .nickname {
     font-family: 'Tektur', sans-serif;
     font-size: 5rem;
@@ -61,39 +56,36 @@ body {
     color: #e0e0e0;
 }
 
-/* Социальные сети */
 .socials {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Отступ между иконками */
+    gap: 20px;
 }
 
 .icon {
     font-size: 1.2rem;
     text-decoration: none;
-    color: #f0f0f0; /* Цвет ссылки */
-    border: 2px solid #f0f0f0; /* Граница ссылки */
+    color: #f0f0f0;
+    border: 2px solid #f0f0f0;
     padding: 10px 15px;
-    border-radius: 5px; /* Закругленные углы */
-    transition: all 0.3s ease; /* Плавный эффект */
-    display: flex; /* Размещение текста и изображения */
-    align-items: center; /* Выравнивание элементов */
-    gap: 8px; /* Расстояние между текстом и картинкой */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Изображение иконки */
 .icon img {
-    width: 20px; /* Ширина изображения */
-    height: 20px; /* Высота изображения */
+    width: 20px;
+    height: 20px;
 }
 
 .icon:hover {
-    background-color: #f0f0f0; /* Изменение цвета фона при наведении */
-    color: #1e1e1e; /* Изменение цвета текста при наведении */
-    transform: scale(1.1); /* Увеличение ссылки при наведении */
+    background-color: #f0f0f0;
+    color: #1e1e1e;
+    transform: scale(1.1);
 }
 
-/* Скрытие аудио-плеера */
 audio {
     display: none;
 }
