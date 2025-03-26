@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopeech web site</title>
+    <!-- Подключение файла со стилями -->
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/github.png') }}" type="image/png">
+
+</head>
+<body>
+    <!-- Фон с гифкой -->
+    <div class="background"></div>
+
+    <!-- Аудио для музыки -->
+    <audio id="background-music" loop>
+        <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <!-- Кнопка включения музыки -->
+    <button id="music-toggle" onclick="toggleMusic()">🎵 Включить музыку</button>
+
+    <!-- Основной контент: ник и социальные сети -->
+    <div class="content">
+        <!-- Ник пользователя -->
+        <h1 class="nickname">Scopeech</h1>
+
+        <!-- Ссылки на социальные сети -->
+        <div class="socials">
+            <!-- Ссылка на GitHub с изображением и текстом -->
+            <a href="https://github.com/scopeech" target="_blank" class="icon github">
+                <img src="{{ url_for('static', filename='icons/github.png') }}" alt="GitHub"> GitHub
+            </a>
+            <!-- Ссылка на Telegram с изображением и текстом -->
+            <a href="https://t.me/juniorscopeech" target="_blank" class="icon telegram">
+                <img src="{{ url_for('static', filename='icons/telegram.png') }}" alt="Telegram"> Telegram
+            </a>
+        </div>
+    </div>
+
+    <!-- Скрипт управления музыкой -->
+    <script>
+        function toggleMusic() {
+            const music = document.getElementById('background-music');
+            const button = document.getElementById('music-toggle');
+            // Если музыка остановлена, включить её
+            if (music.paused) {
+                music.play();
+                button.textContent = "🎵 Выключить музыку";
+            } else {
+                // Если музыка играет, остановить её
+                music.pause();
+                button.textContent = "🎵 Включить музыку";
+            }
+        }
+    </script>
+</body>
+</html>
